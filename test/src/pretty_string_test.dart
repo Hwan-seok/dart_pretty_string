@@ -33,7 +33,7 @@ void main() {
         friend: null,
       ),
     );
-    expect(dog.toString().prettyPrint(), '''
+    expect(dog.toString().toPrettier(), '''
 Dog(
   true,
   10,
@@ -83,7 +83,7 @@ Dog(
       ],
     );
 
-    expect(member.toString().prettyPrint(), '''
+    expect(member.toString().toPrettier(), '''
 Member(
   id: 1,
   name: John,
@@ -120,7 +120,7 @@ Member(
       }
     };
 
-    expect(json.toString().prettyPrint(), '''
+    expect(json.toString().toPrettier(), '''
 {
   p1: 123,
   p2: v2,

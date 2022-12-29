@@ -1,5 +1,13 @@
-/// The extension which contains the only method([prettyPrint]) of this library.
-extension PrettyString on String {
+// ignore_for_file: lines_longer_than_80_chars
+
+/// The extension which contains the only method([toPrettier]) of this library.
+extension PrettyStringFromObject on Object {
+  /// This redirects to [PrettyStringFromString.toPrettier]
+  String toPrettier() => toString().toPrettier();
+}
+
+/// The extension which contains the only method([toPrettier]) of this library.
+extension PrettyStringFromString on String {
   String? _tryGet(int idx) {
     if (idx >= length || idx < 0) {
       return null;
@@ -8,7 +16,42 @@ extension PrettyString on String {
   }
 
   /// This prettily prints all strings.
-  String prettyPrint({
+  ///
+  /// 1.
+  /// - Before
+  /// ```dart
+  /// Dog(true, 10, [Dog(true, 100, [], null), Dog(true, 100, [], null)], Dog(true, 100, [], null))
+  /// ```
+  ///
+  /// - After
+  /// ```dart
+  /// Dog(
+  ///   true,
+  ///   10,
+  ///   [
+  ///     Dog(
+  ///       true,
+  ///       100,
+  ///       [],
+  ///       null
+  ///     ),
+  ///     Dog(
+  ///       true,
+  ///       100,
+  ///       [],
+  ///       null
+  ///     )
+  ///   ],
+  ///   Dog(
+  ///     true,
+  ///     100,
+  ///     [],
+  ///     null
+  ///   )
+  /// )
+  /// ```
+  ///
+  String toPrettier({
     String indent = '  ',
     List<String> separators = const <String>[','],
     Map<String, String> brackets = const {
