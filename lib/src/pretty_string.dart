@@ -128,3 +128,15 @@ extension PrettyStringFromString on String {
     return buff.toString();
   }
 }
+
+/// This makes objects to be not needed to call `[toPrettier]()`.
+/// This overrides `toString()` to became `toPrettier()`
+///
+/// This could be used as importing shortcut of this library
+/// since extension method are not easy to import today.
+mixin Prettier on Object {
+  @override
+  String toString() {
+    return super.toString().toPrettier();
+  }
+}
