@@ -1,6 +1,6 @@
 ## 0.1.1
 
-- docs: Add docs
+- docs: Update neat descriptions of this package
 
 ## 0.1.0
 
