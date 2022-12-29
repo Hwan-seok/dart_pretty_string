@@ -1,3 +1,7 @@
+## 0.1.1
+
+- docs: Add docs
+
 ## 0.1.0
 
 - docs: Add docs
