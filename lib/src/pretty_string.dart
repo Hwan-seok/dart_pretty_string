@@ -3,7 +3,20 @@
 /// The extension which contains the only method([toPrettier]) of this library.
 extension PrettyStringFromObject on Object {
   /// This redirects to [PrettyStringFromString.toPrettier]
-  String toPrettier() => toString().toPrettier();
+  String toPrettier({
+    String indent = '  ',
+    List<String> separators = const <String>[','],
+    Map<String, String> brackets = const {
+      '{': '}',
+      '[': ']',
+      '(': ')',
+    },
+  }) =>
+      toString().toPrettier(
+        indent: indent,
+        separators: separators,
+        brackets: brackets,
+      );
 }
 
 /// The extension which contains the only method([toPrettier]) of this library.
