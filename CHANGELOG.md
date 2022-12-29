@@ -1,3 +1,8 @@
+## 1.0.0
+
+- feat: Provide a class which overrides toString()
+- feat: Add ability to pass custom arguments from object
+
 ## 0.1.3
 
 - docs: Enhance the documentation

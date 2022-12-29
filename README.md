@@ -11,7 +11,7 @@ Add `pretty_string` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  pretty_string: 0.1.0
+  pretty_string: 1.0.0
 ```
 
 Install it:
