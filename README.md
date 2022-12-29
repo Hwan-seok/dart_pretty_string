@@ -3,7 +3,7 @@
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]
 
-A simple way to log strings to be awesome!
+A simple way to convert strings to be human-readable!
 
 ## Installation 💻
 
@@ -22,9 +22,10 @@ flutter pub get
 
 ## Motivation
 Almost every application, we need to log APIs, BLoc state transitions, ..etc to debug what is happening there.
-But models in dart using such as `Equatable`, `Freezed` and `Plain dart object` has not "very" kind `toString()` implementation.
-Compare between [equatable-toString()](#equatable-toString) and [equatable-toPrettier()](#equatable-toPrettier). Pretty powerful right? This also works with [freezed](#freezed-model) too.
-Remember this examples are very simple case. In real world, there are very complicated object that has dozens of properties which makes you crazy to see log without `toPrettier()`.
+Also, we don't want to implement `toString()` by hand because it's quite tedious. So, many developers are finding the solution and finally stops at `Equatable` and `Freezed`. They provides good implementations for `toString()` but its not enough. They returns only one line which makes crazy as the model size is bigger.
+
+See generated string made by `.toPrettier()` in [Equatable model](#equatable-model) and [Freezed model](#freezed-model). Pretty powerful right?
+Remember this examples are very simple cases. In real world, you probably knows there are much complicated object that has dozens of properties which makes you crazy to see log without `toPrettier()`.
 
 ## Usage💯
 - This packages has very simple extension method named `.toPrettier()`.
@@ -58,13 +59,11 @@ class Dog extends Equatable {
   @override
   List<Object?> get props => [hasTail, age, parents, friend];
 }
-```
-#### with toString() {#equatable-toString}
-```dart
+
+/// with toString()
 Dog(true, 10, [Dog(true, 100, [], null), Dog(true, 100, [], null)], Dog(true, 100, [], null))
-```
-#### with toPrettier() {#equatable-toPrettier}
-```dart
+
+/// with toPrettier()
 Dog(
   true,
   10,
@@ -90,9 +89,8 @@ Dog(
   )
 )
 ```
----
 
-### Freezed model {#freezed-model}
+### Freezed model
 ```dart
 @freezed
 class Member with _$Member {
@@ -104,13 +102,11 @@ class Member with _$Member {
 
   const Member._();
 }
-```
-#### with toString()
-```dart
+ 
+/// with toString()
 Member(id: 1, name: John, friends: [Member(id: 10, name: Amy, friends: []), Member(id: 30, name: Barth, friends: []), Member(id: 50, name: Irene, friends: [])])
-```
-#### with toPrettier()
-```dart
+
+/// with toPrettier()
 Member(
   id: 1,
   name: John,
@@ -135,7 +131,7 @@ Member(
 ```
 
 ## Advanced
-#### Custom
+### Custom
 - `.toPrettier()` has a following defaults. If you want to change the behavior, pass it as a argument.
 ```dart
 /// Changes intent width or characters.
