@@ -33,7 +33,8 @@ void main() {
         friend: null,
       ),
     );
-    expect(dog.toString().toPrettier(), '''
+
+    const result = '''
 Dog(
   true,
   10,
@@ -57,7 +58,10 @@ Dog(
     [],
     null
   )
-)''');
+)''';
+
+    expect(dog.toString().toPrettier(), result);
+    expect(dog.toPrettier(), result);
   });
 
   test('Nested Freezed model formats well', () {
