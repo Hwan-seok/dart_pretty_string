@@ -1,3 +1,7 @@
+## 0.1.3
+
+- docs: Enhance the documentation
+
 ## 0.1.2
 
 - docs: Update headlines
