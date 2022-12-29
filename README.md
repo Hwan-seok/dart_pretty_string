@@ -3,7 +3,7 @@
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]
 
-A simple way log strings to be awesome!
+A simple way to log strings to be awesome!
 
 ## Installation 💻
 
