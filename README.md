@@ -40,7 +40,7 @@ log(someVeryComplicatedString.toPrettier())
 ```
 
 ## Examples🌏
-#### Equatable model
+### Equatable model
 ```dart
 class Dog extends Equatable {
   const Dog({
@@ -59,11 +59,11 @@ class Dog extends Equatable {
   List<Object?> get props => [hasTail, age, parents, friend];
 }
 ```
-##### with toString() {#equatable-toString}
+#### with toString() {#equatable-toString}
 ```dart
 Dog(true, 10, [Dog(true, 100, [], null), Dog(true, 100, [], null)], Dog(true, 100, [], null))
 ```
-##### with toPrettier() {#equatable-toPrettier}
+#### with toPrettier() {#equatable-toPrettier}
 ```dart
 Dog(
   true,
@@ -92,7 +92,7 @@ Dog(
 ```
 ---
 
-#### Freezed model {#freezed-model}
+### Freezed model {#freezed-model}
 ```dart
 @freezed
 class Member with _$Member {
@@ -105,11 +105,11 @@ class Member with _$Member {
   const Member._();
 }
 ```
-##### with toString()
+#### with toString()
 ```dart
 Member(id: 1, name: John, friends: [Member(id: 10, name: Amy, friends: []), Member(id: 30, name: Barth, friends: []), Member(id: 50, name: Irene, friends: [])])
 ```
-##### with toPrettier()
+#### with toPrettier()
 ```dart
 Member(
   id: 1,

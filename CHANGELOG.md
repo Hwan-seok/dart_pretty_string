@@ -1,3 +1,7 @@
+## 0.1.2
+
+- docs: Update headlines
+
 ## 0.1.1
 
 - docs: Update neat descriptions of this package
