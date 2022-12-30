@@ -1,3 +1,7 @@
+## 1.0.1
+
+- docs: Add examples
+
 ## 1.0.0
 
 - feat: Provide a class which overrides toString()
