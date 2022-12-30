@@ -134,6 +134,8 @@ extension PrettyStringFromString on String {
 ///
 /// This could be used as importing shortcut of this library
 /// since extension method are not easy to import today.
+///
+/// Unfortunately, this is not working with freezed for now.
 mixin Prettier on Object {
   @override
   String toString() {

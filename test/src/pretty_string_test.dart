@@ -6,8 +6,18 @@ import 'package:test/scaffolding.dart';
 
 import 'models/dog.dart';
 import 'models/member.dart';
+import 'models/prettier_applied_model.dart';
 
 void main() {
+  test('Prettier works well', () {
+    final model = PrettierAppliedModel(id: 1);
+
+    expect(model.toString(), '''
+PrettierAppliedModel(
+  1
+)''');
+  });
+
   test('Nested Equatable model formats well', () {
     final dog = Dog(
       hasTail: true,
